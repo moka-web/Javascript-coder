@@ -16,6 +16,8 @@ class Credito{
   
 }
 
+let creditosIngresados = []
+console.log(creditosIngresados)
 
 
 const pedirCredito = () => {
@@ -25,41 +27,53 @@ const pedirCredito = () => {
     let interes = 1.21;
     let valorCuotas = (monto/cuotas) * interes;
     const credito = new Credito (monto ,cuotas);
+    creditosIngresados.push(credito)
     return credito;
+
+
 }
+
+
 
 const credito1 = pedirCredito();
-console.log(credito1)
+const credito2 = pedirCredito();
+const credito3 = pedirCredito();
 
 
-const ingresarCuotas = () => {
-    switch (credito1.cuotas) {
-        case 3:
-           
-            alert('usted abonara 3 cuotas de $' + credito1.valorCuotas )
+
+for (const Credito of creditosIngresados) {
+    
+    const ingresarCuotas = () => {
+        switch (Credito.cuotas) {
+            case 3:
+               
+                console.log('usted abonara 3 cuotas de $' + Credito.valorCuotas )
+                
+                return Credito.valorCuotas;
+            case 6:
+                console.log('usted abonara 6 cuotas de $' + Credito.valorCuotas )
+                
+                return Credito.valorCuotas;
+                
+            case 12:
+                console.log('usted abonara 12 cuotas de $' + Credito.valorCuotas )
+                
+                return Credito.valorCuotas;
+                
+            case 18:
+                console.log('usted abonara 18 cuotas de $' + Credito.valorCuotas )
+                
+                return Credito.valorCuotas;
+                
+            default:
+                break;
+        }
             
-            return credito1.valorCuotas;
-        case 6:
-            alert('usted abonara 6 cuotas de $' + credito1.valorCuotas )
-            
-            return credito1.valorCuotas;
-            
-        case 12:
-            alert('usted abonara 12 cuotas de $' + credito1.valorCuotas )
-            
-            return credito1.valorCuotas;
-            
-        case 18:
-            alert('usted abonara 18 cuotas de $' + credito1.valorCuotas )
-            
-            return credito1.valorCuotas;
-            
-        default:
-            break;
     }
-        
+    
+     if (Credito.monto > 1000) {
+            ingresarCuotas();
+        }else{ alert('el monto de su credito es menor al minimo requerido')};
 }
 
- if (credito1.monto > 1000) {
-        ingresarCuotas()
-    }else{ alert('el monto de su credito es menor al minimo requerido')} 
+
