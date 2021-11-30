@@ -68,8 +68,20 @@
 				  <div class="col">
 					<input id="monto" type="text" class="form-control" placeholder="monto del prestamo">
 				  </div>
-				  <div class="col">
+				  <!--<div class="col">
 					<input id="cuotas" type="text" class="form-control" placeholder="Elija entre 3, 6, 12 y 18 cuotas">
+				  </div>-->
+				  <div class="input-group mb-3">
+					<select class="custom-select" id="inputGroupSelect02">
+					  <option selected>Choose...</option>
+					  <option value="3">3</option>
+					  <option value="6">6</option>
+					  <option value="12">12</option>
+					  <option value="18">18</option>
+					</select>
+					<div class="input-group-append">
+					  <label class="input-group-text" for="inputGroupSelect02">Options</label>
+					</div>
 				  </div>
 				  <div class="container-button">
 					<!--<input type="submit" class="btn btn-primary" value="solicitar">-->
@@ -106,7 +118,8 @@
 						<a target="_blank" href="" ><img src="images/003-instagram-social-network-logo-of-photo-camera.svg" alt=""></a></div>	
 	</div>
 </footer>
-<script src="/index.js"></script>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
+<script src="/index.js"></script>
 </body>
 </html>

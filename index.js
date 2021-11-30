@@ -19,7 +19,7 @@ let creditosIngresados = [];
 
 
 const inputMonto = document.getElementById('monto');
-const inputCuotas = document.getElementById('cuotas');
+const inputCuotas = document.getElementById('inputGroupSelect02');
 const buttonCredito =document.getElementById('btnLoad');
 const content = document.getElementById('content');
 const form = document.getElementById('my-form');
@@ -27,38 +27,38 @@ const form = document.getElementById('my-form');
 const pedirCredito = () => {
     
     let monto = parseInt(inputMonto.value) ;
-    let cuotas = parseInt(inputCuotas.value);
+    let cuotas = inputCuotas.value;
     let interes = 1.21;
     let valorCuotas = (monto/cuotas) * interes;
     const credito = new Credito (monto ,cuotas);
     
-    creditosIngresados.push(credito);
-    localStorage.setItem('creditos', JSON.stringify(creditosIngresados));
-    console.log(creditosIngresados);
-
-    return credito;
+    if ( (monto > 1000)){
+        
+        creditosIngresados.push(credito);
+        localStorage.setItem('creditos', JSON.stringify(creditosIngresados));
+        console.log(creditosIngresados);
+        return credito;
+    
+    }else{alertCredito()}
+     
 }
 
 
 const alertCredito = () =>{
     const alert = document.createElement('div');
     alert.className = "alert alert-danger";
-    alert.innerHTML = 'Los datos ingresados no son validos';
+    alert.innerHTML = 'ingrese un monto mayor a $1.000';
     form.appendChild(alert);
 }
 
 
 const devolverCredito = () => {
     
+    let tarjetasa = document.getElementById("div-card");
+    let div = document.createElement('div')
+    
     for (const Credito of creditosIngresados) {
-
-        
-         if ( (Credito.monto > 1000) && ((Credito.cuotas === 3) || (Credito.cuotas === 6) || (Credito.cuotas === 12) || (Credito.cuotas === 18))) 
-         {
-            
-            let tarjetasa = document.getElementById("div-card");
-            let div = document.createElement('div')
-                    
+                
                 div.className = " card tarjetasa "
     
                 div.innerHTML = `<h2>Mi credito</h2>
@@ -68,10 +68,9 @@ const devolverCredito = () => {
                  <button>Confirmar Credito</button>
                  <hr>`;
                 tarjetasa.appendChild(div)
-            }
-            
-            else{ alertCredito()};
+        
     }
+
 
 }
 
