@@ -20,17 +20,17 @@ $(document).ready( function(){
 
     //const form = $('#user-form');
 
-    const inputMonto = document.getElementById('monto'); //equivale a document.getElementById()
-    const inputCuotas = document.getElementById('inputGroupSelect02');
-    const buttonCredito =document.getElementById('btnLoad');
-    const content = document.getElementById('content');
-    const form = document.getElementById('my-form');
+    const inputMonto = $('#monto'); //equivale a document.getElementById()
+    const inputCuotas = $('#inputGroupSelect02'); 
+    const buttonCredito = $('#btnLoad');
+    const content = $('#content');
+    const form = $('#content'); 
 
 
     const pedirCredito = () => {
     
-        let monto = inputMonto.value ;
-        let cuotas = inputCuotas.value;
+        let monto = inputMonto.val() ;
+        let cuotas = inputCuotas.val();
         let interes = 1.21;
         let valorCuotas = (monto/cuotas) * interes;
         const credito = new Credito (monto ,cuotas);
@@ -54,6 +54,9 @@ $(document).ready( function(){
         form.appendChild(alert);
     }
 
+
+
+
     const devolverCredito = () => {
     
         let tarjetasa = document.getElementById("div-card");
@@ -67,14 +70,16 @@ $(document).ready( function(){
                      <p>monto : $${Credito.monto}</p>
                      <p>cuotas : ${Credito.cuotas}</p>
                      <p>valor cuotas $${Credito.valorCuotas}</p>
-                     <button>Confirmar Credito</button>
+                     <button id = 'confirmarCredito' >Confirmar Credito</button>
                      <hr>`;
                     tarjetasa.appendChild(div)
             
         }
-    
+        const confirmarCredito = $('#confirmarCredito')
     
     }
+
+    
 
 
     buttonCredito.onclick = (event) => {
