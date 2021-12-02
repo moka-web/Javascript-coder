@@ -27,6 +27,16 @@ $(document).ready( function(){
     const form = $('#content'); 
 
 
+    const alertCredito = () =>{
+
+        const alert = document.createElement('div');
+        alert.className = "alert alert-danger";
+        alert.innerHTML = 'ingrese un monto mayor a $1.000';  
+        form.append(alert);
+        
+    }
+
+
     const pedirCredito = () => {
     
         let monto = inputMonto.val() ;
@@ -42,19 +52,12 @@ $(document).ready( function(){
             console.log(creditosIngresados);
             return credito;
         
-        }else{alertCredito()}
+        }
+        else
+        
+        {alertCredito()}
          
     }
-
-
-    const alertCredito = () =>{
-        const alert = document.createElement('div');
-        alert.className = "alert alert-danger";
-        alert.innerHTML = 'ingrese un monto mayor a $1.000';
-        form.appendChild(alert);
-    }
-
-
 
 
     const devolverCredito = () => {
@@ -75,20 +78,41 @@ $(document).ready( function(){
                     tarjetasa.appendChild(div)
             
         }
-        const confirmarCredito = $('#confirmarCredito')
+
+
+        $('#confirmarCredito').on('click',(event) => {
+        
+            creditosIngresados = [];
+            location.reload();
     
+        })
+        //const confirmarCredito = $('#confirmarCredito');
+         
+        /*$('#confirmarCredito').on('click',(event) => {
+            
+            const creditosIngresados = []; //se ejcuta en el entorno de la funcion
+            location.reload();
+
+        })*/
     }
 
     
+    
 
-
-    buttonCredito.onclick = (event) => {
+    /*buttonCredito.onclick = (event) => {
         event.preventDefault()
         
         pedirCredito();
         devolverCredito();
     
-    }
+    }*/
+
+    buttonCredito.on('click',(evenet) =>{
+        evenet.preventDefault()
+        pedirCredito();
+        devolverCredito();
+
+    })
 
 
 })
