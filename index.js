@@ -56,22 +56,24 @@ $(document).ready( function(){
 
     const devolverCredito = () => {
     
-        let tarjetasa = $("#div-card");
+        let tarjetasa = document.getElementById("div-card");
+        let div = document.createElement('div')
         
         for (const Credito of creditosIngresados) {
                     
-            $(tarjetasa).append(
-                
-                    `<h2>Mi credito</h2>
-                    <p>monto : $${Credito.monto}</p>
-                    <p>cuotas : ${Credito.cuotas}</p>
-                    <p>valor cuotas $${Credito.valorCuotas}</p>
-                    <button>Confirmar Credito</button>
-                    <hr>`);          
+                    div.className = " card tarjetasa "
+        
+                    div.innerHTML = `<h2>Mi credito</h2>
+                     <p>monto : $${Credito.monto}</p>
+                     <p>cuotas : ${Credito.cuotas}</p>
+                     <p>valor cuotas $${Credito.valorCuotas}</p>
+                     <button>Confirmar Credito</button>
+                     <hr>`;
+                    tarjetasa.appendChild(div)
             
         }
     
-        
+    
     }
 
 
