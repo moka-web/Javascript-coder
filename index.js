@@ -64,11 +64,16 @@ $(document).ready( function(){
     
         let tarjetasa = document.getElementById("div-card");
         let div = document.createElement('div')
+
+
+        if (tarjetasa.childNodes[0] ) {
+            tarjetasa.removeChild(tarjetasa.childNodes[0]);
+            
+        };
         
         for (const Credito of creditosIngresados) {
                     
                     div.className = " card tarjetasa "
-        
                     div.innerHTML = `<h2>Mi credito</h2>
                      <p>monto : $${Credito.monto}</p>
                      <p>cuotas : ${Credito.cuotas}</p>
@@ -81,11 +86,18 @@ $(document).ready( function(){
 
 
         $('#confirmarCredito').on('click',(event) => {
-            
+            //deberia agregar otra funcionalidad
             creditosIngresados = [];
             location.reload();
+           
     
         })
+
+
+
+
+
+
         //const confirmarCredito = $('#confirmarCredito');
          
         /*$('#confirmarCredito').on('click',(event) => {
