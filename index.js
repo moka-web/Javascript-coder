@@ -81,7 +81,7 @@ $(document).ready( function(){
 
 
         $('#confirmarCredito').on('click',(event) => {
-        
+            
             creditosIngresados = [];
             location.reload();
     
