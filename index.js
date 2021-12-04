@@ -20,8 +20,8 @@ $(document).ready( function(){
 
     //const form = $('#user-form');
 
-    const inputMonto = $('#monto'); //equivale a document.getElementById()
-    const inputCuotas = $('#inputGroupSelect02'); 
+    let inputMonto = $('#monto'); //equivale a document.getElementById()
+    let inputCuotas = $('#inputGroupSelect02'); 
     const buttonCredito = $('#btnLoad');
     const content = $('#content');
     const form = $('#content'); 
@@ -38,6 +38,7 @@ $(document).ready( function(){
 
 
     const pedirCredito = () => {
+
     
         let monto = inputMonto.val() ;
         let cuotas = inputCuotas.val();
@@ -56,11 +57,14 @@ $(document).ready( function(){
         else
         
         {alertCredito()}
-         
-    }
+
+        
+        }
 
 
     const devolverCredito = () => {
+
+        
     
         let tarjetasa = document.getElementById("div-card");
         let div = document.createElement('div')
@@ -89,13 +93,9 @@ $(document).ready( function(){
             //deberia agregar otra funcionalidad
             creditosIngresados = [];
             location.reload();
-           
+        
     
         })
-
-
-
-
 
 
         //const confirmarCredito = $('#confirmarCredito');
@@ -121,9 +121,10 @@ $(document).ready( function(){
 
     buttonCredito.on('click',(evenet) =>{
         evenet.preventDefault()
+        
         pedirCredito();
         devolverCredito();
-
+        
     })
 
 
