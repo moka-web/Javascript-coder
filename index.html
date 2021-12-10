@@ -57,10 +57,54 @@
 <div class="container servicios" id="servicios">
 	<div class="row">
 		<div class="col-md-12">
-			<h1>Prestamos personales</h1>
+			<h1 id="prestamosPersonales">Prestamos personales</h1>
 		</div>
 	</div>
-	<div id="content" class="row images">
+	<br>
+	<br>
+	<div>
+	  <form id="my-form">
+		<div class="form-row">
+			<div class="form-group col-md-6">
+			  <label for="monto">Monto</label>
+			  <input type="number" class="form-control" id="monto">
+			</div>
+			<div class="form-group col-md-4">
+			  <label for="inputGroupSelect02">Cuotas</label>
+			  <select id="inputGroupSelect02" class="form-control">
+				<option selected>Elija el numero de cuotas</option>
+					  <option value="3">3</option>
+					  <option value="6">6</option>
+					  <option value="12">12</option>
+					  <option value="18">18</option>
+			  </select>
+			</div>
+		  </div>
+
+
+		<div class="form-row">
+		  <div class="form-group col-md-6">
+			<label for="nombre">nombre</label>
+			<input type="text" class="form-control" id="nombre" placeholder="Nombre">
+		  </div>
+		  <div class="form-group col-md-6">
+			<label for="apellido">apellido</label>
+			<input type="text" class="form-control" id="apellido" placeholder="apellido">
+		  </div>
+		</div>
+		<div class="form-group col-md-6">
+			<label for="email">Email</label>
+			<input type="email" class="form-control" id="email" placeholder="Email">
+		</div>
+
+		
+		  <button id="btnLoad" class="btn btn-primary">solicitar</button>
+	  </form>
+	  <div id="div-card">
+
+	  </div>
+	</div>
+	<!--<div id="content" class="row images">
 		<div class="col-md-12">
 			<h3>solicite credito</h3>
 			<form id="my-form" >
@@ -70,7 +114,7 @@
 				  </div>
 				  <!--<div class="col">
 					<input id="cuotas" type="text" class="form-control" placeholder="Elija entre 3, 6, 12 y 18 cuotas">
-				  </div>-->
+				  </div>
 				  <div class="input-group mb-3">
 					<select class="custom-select" id="inputGroupSelect02">
 					  <option selected>Choose...</option>
@@ -84,7 +128,7 @@
 					</div>
 				  </div>
 				  <div class="container-button">
-					<!--<input type="submit" class="btn btn-primary" value="solicitar">-->
+					<!--<input type="submit" class="btn btn-primary" value="solicitar">
 					<button id="btnLoad" class="btn btn-primary">solicitar</button>
 				  </div>
 				</div>
@@ -93,7 +137,7 @@
 		<div id="div-card">
 
 		</div>
-	</div>
+	</div>-->
 	
 </div>
 
@@ -120,6 +164,7 @@
 </footer>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
+<script src="/animation.js"></script>
 <script src="/index.js"></script>
 </body>
 </html>

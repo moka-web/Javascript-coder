@@ -2,7 +2,10 @@ $(document).ready( function(){
 
     class Credito{
     
-        constructor(monto , cuotas,){
+        constructor(nombre,apellido,email,monto , cuotas,){
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.email = email;
             this.monto = monto;
             this.cuotas = cuotas;
             this.interes = 1.21;
@@ -19,13 +22,15 @@ $(document).ready( function(){
     let creditosIngresados = [];
 
     //const form = $('#user-form');
-
+    let inputNombre = $('#nombre');
+    let inputApellido = $('#apellido');
+    let inputEmail = $('#email')
     let inputMonto = $('#monto'); //equivale a document.getElementById()
     let inputCuotas = $('#inputGroupSelect02'); 
     const buttonCredito = $('#btnLoad');
     const content = $('#content');
-    const form = $('#content'); 
-
+    const form = $('#my-form'); 
+    //$(form).fadeOut().fadeIn(1000);
 
     const alertCredito = () =>{
 
@@ -39,12 +44,14 @@ $(document).ready( function(){
 
     const pedirCredito = () => {
 
-    
-        let monto = inputMonto.val() ;
+        let nombre = inputNombre.val();
+        let apellido = inputApellido.val();
+        let email = inputEmail.val();
+        let monto = inputMonto.val();
         let cuotas = inputCuotas.val();
         let interes = 1.21;
         let valorCuotas = (monto/cuotas) * interes;
-        const credito = new Credito (monto ,cuotas);
+        const credito = new Credito (nombre,apellido,email,monto ,cuotas);
         
         if ( (monto > 1000)){
             
@@ -64,7 +71,7 @@ $(document).ready( function(){
 
     const devolverCredito = () => {
 
-        
+       
     
         let tarjetasa = document.getElementById("div-card");
         let div = document.createElement('div')
@@ -77,14 +84,23 @@ $(document).ready( function(){
         
         for (const Credito of creditosIngresados) {
                     
-                    div.className = " card tarjetasa "
+                    div.id = "cardCreate"
+                    div.className = "  tarjetasa "
                     div.innerHTML = `<h2>Mi credito</h2>
-                     <p>monto : $${Credito.monto}</p>
-                     <p>cuotas : ${Credito.cuotas}</p>
-                     <p>valor cuotas $${Credito.valorCuotas}</p>
-                     <button id = 'confirmarCredito' >Confirmar Credito</button>
-                     <hr>`;
+                    <p>Nombre : ${Credito.nombre}</p>
+                    <p>Apellido : ${Credito.apellido}</p> 
+                    <p>Email : ${Credito.email}</p>    
+                    <p>Monto : $${Credito.monto}</p>
+                    <p>Cuotas : ${Credito.cuotas}</p>
+                    <p>valor cuotas $${Credito.valorCuotas}</p>
+                    <button id = 'confirmarCredito' >Confirmar Credito</button>
+                    <hr>`;
                     tarjetasa.appendChild(div)
+                    $('.tarjetasa').fadeIn(1000)
+                   
+                    $('#my-form').css({
+                        "display": "none"}
+                    )
             
         }
 
@@ -98,32 +114,20 @@ $(document).ready( function(){
         })
 
 
-        //const confirmarCredito = $('#confirmarCredito');
-         
-        /*$('#confirmarCredito').on('click',(event) => {
-            
-            const creditosIngresados = []; //se ejcuta en el entorno de la funcion
-            location.reload();
-
-        })*/
     }
 
     
     
 
-    /*buttonCredito.onclick = (event) => {
-        event.preventDefault()
-        
-        pedirCredito();
-        devolverCredito();
-    
-    }*/
 
     buttonCredito.on('click',(evenet) =>{
         evenet.preventDefault()
         
         pedirCredito();
         devolverCredito();
+        
+       
+    
         
     })
 
@@ -148,18 +152,5 @@ $(document).ready( function(){
 
 
 
-
-/*let creditosAlmacenados = localStorage.getItem('creditos');
-console.log(creditosAlmacenados);*/
-
-/*let creditosAlmacenados2 = localStorage.getItem('creditos') //nuevo array para no manipular el original que no estoy usando para nada 
-if (creditosAlmacenados2 != null) {
-    let nuevoArray = JSON.parse(creditosAlmacenados2)
-    console.log(nuevoArray)
-}*/
-
-
-
-//eventos
 
 
