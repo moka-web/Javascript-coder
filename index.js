@@ -88,14 +88,15 @@ $(document).ready( function(){
                     
                     div.id = "cardCreate"
                     div.className = "  tarjetasa "
-                    div.innerHTML = `<h2>Mi credito</h2>
-                    <p>Nombre : ${Credito.nombre}</p>
-                    <p>Apellido : ${Credito.apellido}</p> 
-                    <p>Email : ${Credito.email}</p>    
+                    div.innerHTML = `<h2>Tu Prestamo</h2>
                     <p>Monto : $${Credito.monto}</p>
                     <p>Cuotas : ${Credito.cuotas}</p>
-                    <p>valor cuotas $${Credito.valorCuotas}</p>
-                    <button id = 'confirmarCredito' >Confirmar Credito</button>
+                    <p>valor cuotas : $${Credito.valorCuotas}</p>
+                    <p>Nombre : ${Credito.nombre}</p>
+                    <p>Apellido : ${Credito.apellido}</p> 
+                    <p>Email : ${Credito.email}</p>  
+                 
+                    <button id = 'confirmarCredito' class="btn btn-primary" >Confirmar Credito</button>
                     <hr>`;
                     tarjetasa.appendChild(div)
                     $('.tarjetasa').fadeIn(1000)

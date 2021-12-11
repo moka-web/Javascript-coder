@@ -25,8 +25,8 @@
 			<div class="col-md-3"></div>
 			<div class="col-md-5">
 				<ul class='botonera'>
-					<li><a href="#nosotros" data-ancla="nosotros">Quienes somos</a></li>
-					<li><a href="#servicios" data-ancla="servicios">tu prestamo</a></li>
+					<li><a href="#servicios" data-ancla="servicios">Tu prestamo</a></li>
+					<li><a href="#nosotros" data-ancla="nosotros">Dolar Hoy</a></li>
 					<li><a href="#contacto" data-ancla="contacto">Contacto</a></li>
 
 				</ul>
@@ -37,14 +37,80 @@
 </header>
 
 <div class="principal vertical-centered-text" id="home">
-	<div class="col-md-8 cta"><h1>Pedi tu prestamo! facil y rapido</h1> 
-		<h4></h4>
+	<div class="col-md-8 cta">
+		<h1 class="estilo_h1">PEDI TU PRESTAMO !</h1> 
+		<h4 class="estilo_h4"> FACIL , RAPIDO Y SEGURO!</h4>
 		<p></p>
 		<a  href="#servicios" class="btn btn-primary orange">Solicitalo!</a>
 	</div>
 </div>
 
+
+
+<div class=" servicios" id="servicios">
+	<div class="row">
+		<div class="col-md-12"> 
+			<h1 class="estilo_h1" id="prestamosPersonales">CALCULA TU PRESTAMO !</h1>
+		</div>
+	</div>
+	<br>
+	<br>
+	<div  id="form_div">
+		<form id="my-form">
+		<div class=" form-column">
+			<div class="form-group  col-md-6">
+			
+			  <input type="number" class="form-control" id="monto" placeholder="ingrese el monto">
+			</div>
+			<div class="form-group col-md-6">
+			 
+			  <select id="inputGroupSelect02" class="form-control">
+				<option selected>Elija el numero de cuotas</option>
+					  <option value="3">3</option>
+					  <option value="6">6</option>
+					  <option value="12">12</option>
+					  <option value="18">18</option>
+			  </select>
+			</div>
+		  </div>
+
+
+		<div class="form-column">
+		  <div class="form-group col-md-6">
+			
+			<input type="text" class="form-control" id="nombre" placeholder="Nombre">
+		  </div>
+		  <br>
+		  <div class="form-group col-md-6">
+			
+			<input type="text" class="form-control" id="apellido" placeholder="apellido">
+		  </div>
+		  <br>
+		</div>
+		<div class="form-group col-md-6">
+			
+			<input type="email" class="form-control" id="email" placeholder="Email">
+		</div>
+
+		
+		  <button id="btnLoad" class="btn btn-primary">solicitar</button>
+	  </form>
+
+	
+	</div>
+	<div id="div-card">
+
+	</div>
+	
+</div>
+
 <div class="nosotros  orange" id="nosotros">
+	
+	<div>
+		<h1 class="estilo_h1_dolar"> DOLAR HOY !</h1>
+		<h3 class="estilo_h3">Consultá todas las cotizaciones del dólar, al día de hoy</h3>
+	</div>
+	
 	<div class="container">
 		
 		<select id="elegirTipoDolar" class="form-control">
@@ -60,7 +126,7 @@
 		
 		</select>
 	
-		<button id="dolarButton">consultar precio dolar</button>
+		<button id="dolarButton" class="btn btn-primary">consultar</button>
 	</div>
 	<div id="cardDollar" >
 
@@ -68,59 +134,6 @@
 </div>
 
 
-<div class="container servicios" id="servicios">
-	<div class="row">
-		<div class="col-md-12">
-			<h1 id="prestamosPersonales">Prestamos personales</h1>
-		</div>
-	</div>
-	<br>
-	<br>
-	<div>
-	  <form id="my-form">
-		<div class="form-row">
-			<div class="form-group col-md-6">
-			  <label for="monto">Monto</label>
-			  <input type="number" class="form-control" id="monto">
-			</div>
-			<div class="form-group col-md-4">
-			  <label for="inputGroupSelect02">Cuotas</label>
-			  <select id="inputGroupSelect02" class="form-control">
-				<option selected>Elija el numero de cuotas</option>
-					  <option value="3">3</option>
-					  <option value="6">6</option>
-					  <option value="12">12</option>
-					  <option value="18">18</option>
-			  </select>
-			</div>
-		  </div>
-
-
-		<div class="form-row">
-		  <div class="form-group col-md-6">
-			<label for="nombre">nombre</label>
-			<input type="text" class="form-control" id="nombre" placeholder="Nombre">
-		  </div>
-		  <div class="form-group col-md-6">
-			<label for="apellido">apellido</label>
-			<input type="text" class="form-control" id="apellido" placeholder="apellido">
-		  </div>
-		</div>
-		<div class="form-group col-md-6">
-			<label for="email">Email</label>
-			<input type="email" class="form-control" id="email" placeholder="Email">
-		</div>
-
-		
-		  <button id="btnLoad" class="btn btn-primary">solicitar</button>
-	  </form>
-	  <div id="div-card">
-
-	  </div>
-	</div>
-	
-	
-</div>
 
 <footer>
 	<div class="container" id="contacto">
@@ -133,7 +146,8 @@
 		<div class="row social">
 		<div class="col-3"></div>	
 					<div class="col-2">
-						<a href=""><img src="images/001-mail.svg" alt=""></a></div>
+						<a href=""><img src="images/001-mail.svg" alt=""></a>
+					</div>
 
 					<div class="col-2">
 						<a href=""  target="_blank"><img src="images/002-facebook-logo.svg" alt=""></a></div>

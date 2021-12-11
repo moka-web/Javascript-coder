@@ -38,12 +38,33 @@ header{
 	background: red;
 	height: 90vh;
 	background-color: greenyellow; 
+	background-image: url(/pexels-tara-winstead-7111579.jpg);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
 
+.estilo_h1{
+text-shadow: 1px 1px 2px black;
+}
+.estilo_h1_dolar{
+	text-shadow: 1px 1px 2px black;
+	margin: 10px;
+	font-weight: 700;
+	
+}
+.estilo_h4{
+	text-shadow: 1px 1px 2px black;
+}
+.estilo_h3{
+	color: white;
+	text-shadow: 1px 1px 2px black;
+	margin: 10px;
+}
+#dolarButton{
+	margin: 10px;
+}
 
 .vertical-centered-text {
   -ms-display: flex;
@@ -57,6 +78,7 @@ header{
 .cta{
 	text-align: center;
 }
+
 h1{
 	font-weight: 700;
 	font-size: 50px;
@@ -74,25 +96,35 @@ h1{
 	text-align: center;
 	padding-top: 100px;
 	padding-bottom: 100px;
+	background-image: url(/pexels-tara-winstead-7111579.jpg);
 }
 
-.nosotros h1{
-	font-weight: 100;
-}
+
 
 .servicios{
 	text-align: center;
-	padding-top: 150px;
-	padding-bottom: 50px;
+	padding-top: 50px;
+	padding-bottom: 150px;
+
 }
+#prestamosPersonales{
+	margin-top: -20px;
+	margin-bottom: -20px;
+
+}
+
+
 .servicios img{
 	width: 40%;
 	text-align: center;
 }
 
 .servicios h1{
-	color: #666;
-	font-weight: 100;
+	color:#fdfdfd;
+	
+	
+	
+	
 }
 .servicios .images{
 	padding-top: 30px;
@@ -111,7 +143,7 @@ h1{
 }
 
 footer{
-	background: #757575;
+	
 	height: 50vh;
 	padding-top: 30px;
 }
@@ -132,14 +164,65 @@ footer h1{
 	display: none;
 	width: 1125px;
 	margin: 20px;
-	border: 1px solid #000;
+	margin-left: 125px;
+	
 	border-radius: 10px ;
 	background-color: white;
 	font-family: sans-serif;
-	color: #36800f;
+	color: #4a4d48;
 	box-shadow: 4px 4px 8px  5px rgba(15, 15, 15, 0.35);
 	
 	
+}
+
+
+#my-form{
+	
+	border-radius: 10px;
+	background-color: rgb(255, 255, 255);
+	box-shadow: 4px 4px 8px  5px rgba(15, 15, 15, 0.35) ;
+	
+}
+
+#monto{
+	margin-top: 50px;
+	margin-bottom: -5px;
+	width: 500px;
+	
+}
+#nombre{
+	width: 500px;
+	margin-bottom: -30px;
+}
+#apellido{
+	width: 500px;
+	margin-bottom: -30px;
+}
+#cuotas{
+	width: 400px !important; 
+	
+} 
+
+#email{
+	
+	margin-bottom: 50px;
+	width: 500px;
+}
+
+#form_div{
+	
+	display: flex;
+	justify-content: center;
+	width: 600px;
+	margin-left: 370px;
+	
+	
+}
+
+#btnLoad{
+	width: 500px;
+	
+	margin-bottom: 50px;
 }
 
 
