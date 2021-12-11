@@ -161,9 +161,9 @@ footer h1{
 
 .tarjetasa{
 	display: none;
-	width: 1125px;
-	margin: 20px;
-	margin-left: 125px;
+	
+	
+	
 	
 	border-radius: 10px ;
 	background-color: white;
@@ -212,8 +212,7 @@ footer h1{
 	
 	display: flex;
 	justify-content: center;
-	width: 600px;
-	margin-left: 370px;
+	
 	
 	
 }

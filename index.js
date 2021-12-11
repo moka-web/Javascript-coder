@@ -87,7 +87,7 @@ $(document).ready( function(){
         for (const Credito of creditosIngresados) {
                     
                     div.id = "cardCreate"
-                    div.className = "  tarjetasa "
+                    div.className = " col-md-12 tarjetasa "
                     div.innerHTML = `<h2>Tu Prestamo</h2>
                     <p>Monto : $${Credito.monto}</p>
                     <p>Cuotas : ${Credito.cuotas}</p>
