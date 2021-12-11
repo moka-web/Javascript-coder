@@ -34,10 +34,12 @@ $(document).ready( function(){
 
     const alertCredito = () =>{
 
+       
+
         const alert = document.createElement('div');
         alert.className = "alert alert-danger";
         alert.innerHTML = 'ingrese un monto mayor a $1.000';  
-        form.append(alert);
+        $('#div-card').append(alert);
         
     }
 
@@ -130,7 +132,41 @@ $(document).ready( function(){
     
         
     })
+    
+        const APIDOLLAR = 'https://www.dolarsi.com/api/api.php?type=valoresprincipales';
+    
+    
+    $('#dolarButton').on('click',(event) =>{
+        $.get(APIDOLLAR,(respuesta,estado)=>{
+            if (estado === "success") {
+                let misDatos =respuesta;
+                let elegirDolar= $('#elegirTipoDolar').val();
+                
+               
+                console.log(elegirDolar);
+                console.log(misDatos);
+                console.log(misDatos[elegirDolar].casa); 
+                
+                $('#cardDollar').empty();
+               
 
+                $('#cardDollar').append(
+                    `
+                    <div class="card container "> <p> tipo de cambio: ${misDatos[elegirDolar].casa.nombre} </p> 
+                            <p>venta : $ ${misDatos[elegirDolar].casa.venta}</p>
+                            <p> compra : $ ${misDatos[elegirDolar].casa.compra}</p>    
+                    </div>
+                    `
+                    
+                )
+                
+                
+            }else{
+                console.log('acceso : ',estado)
+            }
+
+        })
+    })
 
 })
 
