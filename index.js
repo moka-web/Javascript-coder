@@ -21,16 +21,16 @@ $(document).ready( function(){
 
     let creditosIngresados = [];
 
-    //const form = $('#user-form');
+   
     let inputNombre = $('#nombre');
     let inputApellido = $('#apellido');
     let inputEmail = $('#email')
-    let inputMonto = $('#monto'); //equivale a document.getElementById()
+    let inputMonto = $('#monto'); 
     let inputCuotas = $('#inputGroupSelect02'); 
     const buttonCredito = $('#btnLoad');
     const content = $('#content');
     const form = $('#my-form'); 
-    //$(form).fadeOut().fadeIn(1000);
+   
 
     const alertCredito = () =>{
 
@@ -43,7 +43,7 @@ $(document).ready( function(){
         
     }
 
-
+    
     const pedirCredito = () => {
 
         let nombre = inputNombre.val();
@@ -55,7 +55,7 @@ $(document).ready( function(){
         let valorCuotas = (monto/cuotas) * interes;
         const credito = new Credito (nombre,apellido,email,monto ,cuotas);
         
-        if ( (monto > 1000)){
+        if ( (monto > 1000) ){
             
             creditosIngresados.push(credito);
             localStorage.setItem('creditos', JSON.stringify(creditosIngresados));
@@ -68,7 +68,7 @@ $(document).ready( function(){
         {alertCredito()}
 
         
-        }
+    }
 
 
     const devolverCredito = () => {
@@ -109,7 +109,7 @@ $(document).ready( function(){
 
 
         $('#confirmarCredito').on('click',(event) => {
-            //deberia agregar otra funcionalidad
+           
             creditosIngresados = [];
             location.reload();
         
