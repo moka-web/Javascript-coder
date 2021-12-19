@@ -21,29 +21,18 @@ $(document).ready( function(){
 
     let creditosIngresados = [];
 
-   
+    //const form = $('#user-form');
     let inputNombre = $('#nombre');
     let inputApellido = $('#apellido');
     let inputEmail = $('#email')
-    let inputMonto = $('#monto'); 
+    let inputMonto = $('#monto'); //equivale a document.getElementById()
     let inputCuotas = $('#inputGroupSelect02'); 
     const buttonCredito = $('#btnLoad');
     const content = $('#content');
     const form = $('#my-form'); 
-   
+    //$(form).fadeOut().fadeIn(1000);
 
-    const alertCredito = () =>{
 
-       
-
-        const alert = document.createElement('div');
-        alert.className = "alert alert-danger";
-        alert.innerHTML = 'ingrese un monto mayor a $1.000';  
-        $('#div-card').append(alert);
-        
-    }
-
-    
     const pedirCredito = () => {
 
         let nombre = inputNombre.val();
@@ -54,21 +43,52 @@ $(document).ready( function(){
         let interes = 1.21;
         let valorCuotas = (monto/cuotas) * interes;
         const credito = new Credito (nombre,apellido,email,monto ,cuotas);
-        
-        if ( (monto > 1000) ){
+
+       
+        const alertCredito = (string) =>{
+            const alert = document.createElement('div');
+            alert.className = "alert alert-danger";
+            alert.innerHTML = string;  
+            $('#div-card').append(alert);
             
+        }
+       
+       
+        const validarEmail = (email) =>{
+            let exp = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+            let validacion = exp.test(email)
+            return validacion;
+        }
+        
+
+        if (monto < 1000) {
+            alertCredito('el monto es menor al minimo requerido')
+            
+        }else if (nombre.length == 0) {
+
+            alertCredito('ingrese un nombre valido')
+            
+            
+        } else if (apellido.length == 0) {
+
+            alertCredito('ingrese un apellido valido')
+    
+        } 
+        else if (validarEmail(email) == false ) {
+            alertCredito('el correo electronico ingresado no es valido')
+            
+        }
+        else{
+
             creditosIngresados.push(credito);
-            localStorage.setItem('creditos', JSON.stringify(creditosIngresados));
             console.log(creditosIngresados);
             return credito;
-        
+
         }
-        else
-        
-        {alertCredito()}
+
 
         
-    }
+        }
 
 
     const devolverCredito = () => {
@@ -87,16 +107,15 @@ $(document).ready( function(){
         for (const Credito of creditosIngresados) {
                     
                     div.id = "cardCreate"
-                    div.className = " col-md-12 tarjetasa "
-                    div.innerHTML = `<h2>Tu Prestamo</h2>
-                    <p>Monto : $${Credito.monto}</p>
-                    <p>Cuotas : ${Credito.cuotas}</p>
-                    <p>valor cuotas : $${Credito.valorCuotas}</p>
+                    div.className = "  tarjetasa "
+                    div.innerHTML = `<h2>Mi credito</h2>
                     <p>Nombre : ${Credito.nombre}</p>
                     <p>Apellido : ${Credito.apellido}</p> 
-                    <p>Email : ${Credito.email}</p>  
-                 
-                    <button id = 'confirmarCredito' class="btn btn-primary" >Confirmar Credito</button>
+                    <p>Email : ${Credito.email}</p>    
+                    <p>Monto : $${Credito.monto}</p>
+                    <p>Cuotas : ${Credito.cuotas}</p>
+                    <p>valor cuotas $${Credito.valorCuotas}</p>
+                    <button id = 'confirmarCredito' >Confirmar Credito</button>
                     <hr>`;
                     tarjetasa.appendChild(div)
                     $('.tarjetasa').fadeIn(1000)
@@ -109,10 +128,37 @@ $(document).ready( function(){
 
 
         $('#confirmarCredito').on('click',(event) => {
-           
-            creditosIngresados = [];
-            location.reload();
-        
+            
+            //deberia agregar otra funcionalidad
+            localStorage.setItem('creditos', JSON.stringify(creditosIngresados));
+            
+            const popUp = ()=> {
+
+                $('#cardCreate').fadeOut()
+
+                const popUpAlert = document.createElement('div');
+                popUpAlert.className = "popUp";
+                popUpAlert.innerHTML = `
+                    <p>su credito fue solicitado</p>
+                    <button id = 'butonPopUp'>joya</button>    
+                ` 
+
+                $('#div-card').append(popUpAlert);
+
+                $('#butonPopUp').on('click',(event)=>{
+                    creditosIngresados= [];
+                    location.reload()
+
+                })
+                
+
+
+            };
+            
+            
+            
+            
+            popUp();
     
         })
 
@@ -170,9 +216,6 @@ $(document).ready( function(){
     })
 
 })
-
-
-
 
 
 
