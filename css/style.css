@@ -166,17 +166,11 @@ footer h1{
 
 .tarjetasa{
 	display: none;
-	
-	
-	
-	
 	border-radius: 10px ;
 	background-color: white;
 	font-family: sans-serif;
 	color: #4a4d48;
 	box-shadow: 4px 4px 8px  5px rgba(15, 15, 15, 0.35);
-	
-	
 }
 
 .popUp{
@@ -186,8 +180,6 @@ footer h1{
 	width: 300px;
 	height: 200px;
 	margin-left: 300px;
-	
-
 }
 
 #my-form{
@@ -195,6 +187,7 @@ footer h1{
 	border-radius: 10px;
 	background-color: rgb(255, 255, 255);
 	box-shadow: 4px 4px 8px  5px rgba(15, 15, 15, 0.35) ;
+	
 	
 }
 
@@ -239,10 +232,58 @@ footer h1{
 }
 
 
+.navfooter{
+    display: flex;
+    justify-content: center; 
+}
+
+
+.listafooter{
+    list-style: none;
+}        
+
+.lifooter{
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px 60px;
+    font-size: 30px;
+}
+
+#facebook{
+    color: #3b5998;
+}
+
+#instagram{
+    color: #3f729b;
+}
+
+#twitter{
+    color: #00acee;
+}
+
+#whatsapp{
+    color: #00bb2d;
+}
+
+
+#h1_contactos{
+	text-decoration: underline;
+	text-decoration-color: #4a4d48;
+}
+
+#parrafo_contactos{
+	margin-top: 50px;
+	text-align: center;
+
+}
+
+
+
 /*@media only screen 
 and (min-device-width : 414px) 
 and (max-device-width : 736px) { }
 @media only screen and (min-width: 324px) and (max-width: 736px) {*/
+
 @media only screen and (max-device-width: 480px), only screen and (min-device-width: 560px) and (max-device-width: 1136px) {
   /* iPhone only */
   /* Styles */

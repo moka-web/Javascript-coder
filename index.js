@@ -31,8 +31,7 @@ $(document).ready( function(){
     let inputMonto = $('#monto'); 
     let inputCuotas = $('#inputGroupSelect02'); 
     const buttonCredito = $('#btnLoad');
-    const content = $('#content');
-    const form = $('#my-form'); 
+   
    
     
 
